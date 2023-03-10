@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/forhibernateex</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Ozzy1401</property>
+
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+    </session-factory>
+</hibernate-configuration>
+
+<!--options for "hibernate.hbm2ddl.auto"
+1)create
+ hibernate always creates a new table
+ if the table is present in database then it deletes it and recreates it
+ ALL DATA WILL BE LOST
+
+2)update
+hibernate first validates that table is present in database or not
+if YES, it will use that table... if NO, it will create a new table.
+
+3)validate
+hibernate only verifies that table is present or not..
+if the table is not present, it will exit and throw an exception.
+
+4)create-drop
+hibernate will create a new table, perform operations and drop that table immediately
+use this value for testing
+
+if you need to make the engine as InnoDB
+https://stackoverflow.com/questions/1459265/hibernate-create-mysql-innodb-tables-instead-of-myisam
+-->
